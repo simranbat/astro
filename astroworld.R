@@ -84,7 +84,7 @@ afinnmerge_drake <- left_join(unnest_drake, afinn, by="word")
 afinnmerge_drake <- mutate(afinnmerge_drake, score = ifelse(is.na(score), 0, score))
 
 #remove certain cuss words that are not coded correctly because of lack of context
-word <- c("ass", "fucking", "fuck", "shit", "damn", "hell", "bitches", "bitch", "nigga", "niggas")
+word <- c("ass", "fucking", "fuck", "shit", "damn", "hell", "bitches", "bitch")
 word_vector <- word
 word <- data.frame(word)
 afinnmerge_drake1 <- anti_join(afinnmerge_drake, word, by="word")
